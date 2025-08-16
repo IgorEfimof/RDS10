@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon180.png">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="RDS10">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Улучшенный Рапидо Старт с LSTM</title>
-    <!-- Загрузка TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
-    <!-- Загрузка Chart.js для визуализации -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* Обновленные стили с новыми элементами */
         :root {
             --bg-color: #f5f5f7;
             --text-color: #1c1c1e;
@@ -1012,6 +1005,12 @@
         document.getElementById('drawField1').value = '';
         document.getElementById('drawField2').value = '';
         
+        // Устанавливаем фокус на первое поле
+        setTimeout(() => {
+            document.getElementById('drawId').focus();
+            showKeyboard(document.getElementById('drawId'));
+        }, 100);
+        
         // Онлайн-обучение модели при наличии новых данных
         if (history.length >= 15 && lstmModel) {
             onlineTrainModel();
@@ -1314,7 +1313,7 @@
             
             // Защита от бесконечного цикла
             while (nums1.length < 8 && attempts < 100) {
-                const base = Math.max(1, Math.min(20, center + Math.floor(Math.random() * (range * 2 + 1)) - range));
+                const base = Math.max(1, Math.min(20, center + Math.floor(Math.random() * (range * 2 + 1)) - range);
                 if (!nums1.includes(base)) {
                     nums1.push(base);
                 }
@@ -1326,7 +1325,7 @@
             
             nums1.sort((a, b) => a - b);
             
-            const num2 = Math.max(1, Math.min(4, Math.round(center / 5) || Math.floor(Math.random() * 4) + 1));
+            const num2 = Math.max(1, Math.min(4, Math.round(center / 5) || Math.floor(Math.random() * 4) + 1);
             
             const currentSum = nums1.reduce((a, b) => a + b, 0) + num2;
             const diff = Math.abs(currentSum - avg);
